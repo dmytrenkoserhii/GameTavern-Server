@@ -5,7 +5,9 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { ServeStaticModule } from '@nestjs/serve-static';
 
+import { AuthModule } from '@/modules/auth/auth.module';
 import { DatabaseModule } from '@/modules/database/database.module';
+import { UsersModule } from '@/modules/users/users.module';
 import { ENV_VALIDATION } from '@/shared/constants';
 
 const ENVIRONMENT = process.env.NODE_ENV;
@@ -22,6 +24,8 @@ const ENVIRONMENT = process.env.NODE_ENV;
       serveRoot: '/locales', // this is the endpoint from where you can access the files
     }),
     DatabaseModule,
+    AuthModule,
+    UsersModule,
   ],
 })
 export class AppModule {}
