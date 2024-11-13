@@ -16,7 +16,7 @@
       "@modules/*": ["src/modules/*"],
       "@shared/*": ["src/shared/*"]
     },
-    "incremental": true,
+    "incremental": false,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": false,
     "strict": true,
