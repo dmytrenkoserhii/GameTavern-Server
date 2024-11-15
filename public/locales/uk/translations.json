@@ -4,14 +4,18 @@
   },
   "header": {
     "search": "Пошук ігор...",
-    "games-link": "Ігри",
+    "games_link": "Ігри",
     "profile": "Профіль",
     "logout": "Вийти"
   },
   "footer": {
-    "created-by": "Створено Сергієм Дмитренко © {{year}}"
+    "created_by": "Створено Сергієм Дмитренко © {{year}}"
+  },
+  "not_found": {
+    "text": "Сторінка не знайдена!",
+    "home_page": "Головна сторінка"
   },
   "general": {
-    "sign-in": "Увійти"
+    "sign_in": "Увійти"
   }
 }
