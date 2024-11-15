@@ -4,7 +4,9 @@
   },
   "header": {
     "search": "Search games...",
-    "games-link": "Games"
+    "games-link": "Games",
+    "profile": "Profile",
+    "logout": "Logout"
   },
   "footer": {
     "created-by": "Created by Serhii Dmytrenko © {{year}}"
