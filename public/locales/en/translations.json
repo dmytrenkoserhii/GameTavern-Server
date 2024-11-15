@@ -1,5 +1,16 @@
 {
   "home": {
     "title": "Home"
+  },
+  "header": {
+    "logo": "Temporary logo",
+    "search": "Search games...",
+    "games-link": "Games"
+  },
+  "footer": {
+    "created-by": "Created by Serhii Dmytrenko ©"
+  },
+  "general": {
+    "sign-in": "Sign in"
   }
 }
