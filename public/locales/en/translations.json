@@ -4,14 +4,18 @@
   },
   "header": {
     "search": "Search games...",
-    "games-link": "Games",
+    "games_link": "Games",
     "profile": "Profile",
     "logout": "Logout"
   },
   "footer": {
-    "created-by": "Created by Serhii Dmytrenko © {{year}}"
+    "created_by": "Created by Serhii Dmytrenko © {{year}}"
+  },
+  "not_found": {
+    "text": "Page not found!",
+    "home_page": "Homme Page"
   },
   "general": {
-    "sign-in": "Sign in"
+    "sign_in": "Sign in"
   }
 }
