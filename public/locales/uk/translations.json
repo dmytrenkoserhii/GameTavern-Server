@@ -1,5 +1,17 @@
 {
   "home": {
     "title": "Головна"
+  },
+  "header": {
+    "search": "Пошук ігор...",
+    "games-link": "Ігри",
+    "profile": "Профіль",
+    "logout": "Вийти"
+  },
+  "footer": {
+    "created-by": "Створено Сергієм Дмитренко © {{year}}"
+  },
+  "general": {
+    "sign-in": "Увійти"
   }
 }

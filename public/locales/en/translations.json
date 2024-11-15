@@ -1,5 +1,17 @@
 {
   "home": {
     "title": "Home"
+  },
+  "header": {
+    "search": "Search games...",
+    "games-link": "Games",
+    "profile": "Profile",
+    "logout": "Logout"
+  },
+  "footer": {
+    "created-by": "Created by Serhii Dmytrenko © {{year}}"
+  },
+  "general": {
+    "sign-in": "Sign in"
   }
 }
