@@ -3,12 +3,11 @@
     "title": "Home"
   },
   "header": {
-    "logo": "Temporary logo",
     "search": "Search games...",
     "games-link": "Games"
   },
   "footer": {
-    "created-by": "Created by Serhii Dmytrenko ©"
+    "created-by": "Created by Serhii Dmytrenko © {{year}}"
   },
   "general": {
     "sign-in": "Sign in"
