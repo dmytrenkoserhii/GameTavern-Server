@@ -5,9 +5,17 @@
     "listsButton": "My Lists"
   },
   "header": {
-    "search": "Search games...",
+    "search": "Search games..."
+  },
+  "navbar": {
     "games_link": "Games",
-    "profile": "Profile",
+    "lists_link": "Lists",
+    "friends_link": "Friends",
+    "messages_link": "Messages",
+    "profile_link": "Profile",
+    "settings_link": "Settings",
+    "subscription_link": "Subscription",
+    "premium": "Premium",
     "logout": "Logout"
   },
   "footer": {
