@@ -25,6 +25,18 @@
     "text": "Сторінка не знайдена!",
     "home_page": "Головна сторінка"
   },
+  "auth": {
+    "signin": {
+      "welcome": "Ласкаво просимо!",
+      "email_label": "Email / Ім'я користувача",
+      "email_placeholder": "your@email.com",
+      "password_label": "Пароль",
+      "password_placeholder": "Ваш пароль",
+      "remember_me": "Запам'ятати мене",
+      "forgot_password": "Забув пароль?",
+      "submit": "Увійти"
+    }
+  },
   "general": {
     "sign_in": "Увійти"
   }
