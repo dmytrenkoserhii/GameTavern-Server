@@ -4,14 +4,33 @@
   },
   "header": {
     "search": "Search games...",
-    "games-link": "Games",
+    "games_link": "Games",
     "profile": "Profile",
     "logout": "Logout"
   },
   "footer": {
-    "created-by": "Created by Serhii Dmytrenko © {{year}}"
+    "created_by": "Created by Serhii Dmytrenko © {{year}}"
+  },
+  "not_found": {
+    "text": "Page not found!",
+    "home_page": "Homme Page"
+  },
+  "auth": {
+    "signin": {
+      "welcome": "Welcome back!",
+      "email_label": "Email / Username",
+      "email_placeholder": "your@email.com",
+      "password_label": "Password",
+      "password_placeholder": "Your password",
+      "remember_me": "Remember me",
+      "forgot_password": "Forgot password?",
+      "submit": "Sign in",
+      "divider": "Or continue with",
+      "google": "Continue with Google",
+      "register_prompt": "Don't have an account? Register"
+    }
   },
   "general": {
-    "sign-in": "Sign in"
+    "sign_in": "Sign in"
   }
 }

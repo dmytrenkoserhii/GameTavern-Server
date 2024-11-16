@@ -4,14 +4,30 @@
   },
   "header": {
     "search": "Пошук ігор...",
-    "games-link": "Ігри",
+    "games_link": "Ігри",
     "profile": "Профіль",
     "logout": "Вийти"
   },
   "footer": {
-    "created-by": "Створено Сергієм Дмитренко © {{year}}"
+    "created_by": "Створено Сергієм Дмитренко © {{year}}"
+  },
+  "not_found": {
+    "text": "Сторінка не знайдена!",
+    "home_page": "Головна сторінка"
+  },
+  "auth": {
+    "signin": {
+      "welcome": "Ласкаво просимо!",
+      "email_label": "Email / Ім'я користувача",
+      "email_placeholder": "your@email.com",
+      "password_label": "Пароль",
+      "password_placeholder": "Ваш пароль",
+      "remember_me": "Запам'ятати мене",
+      "forgot_password": "Забув пароль?",
+      "submit": "Увійти"
+    }
   },
   "general": {
-    "sign-in": "Увійти"
+    "sign_in": "Увійти"
   }
 }
