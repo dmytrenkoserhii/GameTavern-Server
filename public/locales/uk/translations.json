@@ -1,11 +1,21 @@
 {
   "home": {
-    "title": "Головна"
+    "description": "Відкрийте для себе історію ігор і організуйте свої улюблені в персоналізованих списках",
+    "gamesButton": "Переглянути Ігри",
+    "listsButton": "Мої Списки"
   },
   "header": {
-    "search": "Пошук ігор...",
+    "search": "Пошук ігор..."
+  },
+  "navbar": {
     "games_link": "Ігри",
-    "profile": "Профіль",
+    "lists_link": "Списки",
+    "friends_link": "Друзі",
+    "messages_link": "Повідомлення",
+    "profile_link": "Профіль",
+    "settings_link": "Налаштування",
+    "subscription_link": "Підписка",
+    "premium": "Преміум",
     "logout": "Вийти"
   },
   "footer": {
