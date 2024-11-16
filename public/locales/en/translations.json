@@ -1,6 +1,8 @@
 {
   "home": {
-    "title": "Home"
+    "description": "Discover and organize your favorite games in personalized lists",
+    "gamesButton": "Browse Games",
+    "listsButton": "My Lists"
   },
   "header": {
     "search": "Search games...",
