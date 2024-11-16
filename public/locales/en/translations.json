@@ -28,15 +28,14 @@
   "auth": {
     "signin": {
       "welcome": "Welcome back!",
-      "email_label": "Email / Username",
+      "email_label": "Email",
       "email_placeholder": "your@email.com",
       "password_label": "Password",
       "password_placeholder": "Your password",
-      "remember_me": "Remember me",
       "forgot_password": "Forgot password?",
       "submit": "Sign in",
       "divider": "Or continue with",
-      "google": "Continue with Google",
+      "google": "Google",
       "register_prompt": "Don't have an account? Register"
     }
   },

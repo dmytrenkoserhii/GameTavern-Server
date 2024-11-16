@@ -27,14 +27,16 @@
   },
   "auth": {
     "signin": {
-      "welcome": "Ласкаво просимо!",
-      "email_label": "Email / Ім'я користувача",
+      "welcome": "З поверненням!",
+      "email_label": "Email",
       "email_placeholder": "your@email.com",
       "password_label": "Пароль",
       "password_placeholder": "Ваш пароль",
-      "remember_me": "Запам'ятати мене",
-      "forgot_password": "Забув пароль?",
-      "submit": "Увійти"
+      "forgot_password": "Забули пароль?",
+      "submit": "Увійти",
+      "divider": "Або продовжити через",
+      "google": "Google",
+      "register_prompt": "Немає облікового запису? Зареєструватися"
     }
   },
   "general": {
