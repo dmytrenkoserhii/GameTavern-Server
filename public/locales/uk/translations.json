@@ -32,11 +32,27 @@
       "email_placeholder": "your@email.com",
       "password_label": "Пароль",
       "password_placeholder": "Ваш пароль",
-      "forgot_password": "Забули пароль?",
+      "remember_me": "Запам'ятати мене",
+      "forgot_password": "Забув пароль?",
       "submit": "Увійти",
-      "divider": "Або продовжити через",
-      "google": "Google",
-      "register_prompt": "Немає облікового запису? Зареєструватися"
+      "divider": "Або продовжити з",
+      "google": "Продовжити з Google",
+      "register_prompt": "Немає аккаунту? Зареєструватися"
+    },
+    "signup": {
+      "username_label": "Ім'я користувача",
+      "username_placeholder": "Ваше ім'я користувача",
+      "email_label": "Email адреса",
+      "email_placeholder": "hello@example.com",
+      "password_label": "Пароль",
+      "password_placeholder": "Ваш пароль",
+      "confirm_password_label": "Підтвердіть пароль",
+      "confirm_password_placeholder": "Підтвердіть ваш пароль",
+      "terms_label": "Я приймаю Умови та Політику конфіденційності",
+      "register_button": "Зареєструватися",
+      "google_button": "Продовжити з Google",
+      "login_link": "Уже є аккаунт? Увійти",
+      "confirmation_instructions_link": "Не отримали інструкції для підтвердження?"
     }
   },
   "general": {
