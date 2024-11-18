@@ -37,6 +37,21 @@
       "divider": "Or continue with",
       "google": "Google",
       "register_prompt": "Don't have an account? Register"
+    },
+    "signup": {
+      "username_label": "Username",
+      "username_placeholder": "Your username",
+      "email_label": "Email address",
+      "email_placeholder": "hello@example.com",
+      "password_label": "Password",
+      "password_placeholder": "Your password",
+      "confirm_password_label": "Confirm password",
+      "confirm_password_placeholder": "Confirm your password",
+      "terms_label": "I accept the Terms and Privacy Policy",
+      "register_button": "Register",
+      "google_button": "Continue with Google",
+      "login_link": "Already have an account? Log in",
+      "confirmation_instructions_link": "Didn't receive confirmation instructions?"
     }
   },
   "general": {
