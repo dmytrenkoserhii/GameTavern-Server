@@ -7,6 +7,7 @@ import { ServeStaticModule } from '@nestjs/serve-static';
 
 import { AuthModule } from '@/modules/auth/auth.module';
 import { DatabaseModule } from '@/modules/database/database.module';
+import { GamesApiModule } from '@/modules/games-api/games-api.module';
 import { UsersModule } from '@/modules/users/users.module';
 import { ENV_VALIDATION } from '@/shared/constants';
 
@@ -26,6 +27,7 @@ const ENVIRONMENT = process.env.NODE_ENV;
     DatabaseModule,
     AuthModule,
     UsersModule,
+    GamesApiModule,
   ],
 })
 export class AppModule {}
