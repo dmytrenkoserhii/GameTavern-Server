@@ -67,6 +67,14 @@
       "confirm_password_label": "Confirm new password",
       "confirm_password_placeholder": "Confirm your new password",
       "submit_button": "Change my password"
+    },
+    "email_confirmation": {
+      "title": "Account Confirmation",
+      "description": "An email with your account confirmation link has been sent to your email: {{email}}. Check your email and come back to proceed!"
+    },
+    "email_verification": {
+      "title": "Email Verification",
+      "message": "Your email is being verified. Please wait..."
     }
   },
   "general": {
