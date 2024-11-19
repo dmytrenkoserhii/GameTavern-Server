@@ -52,6 +52,21 @@
       "google_button": "Continue with Google",
       "login_link": "Already have an account? Log in",
       "confirmation_instructions_link": "Didn't receive confirmation instructions?"
+    },
+    "forgot_password": {
+      "title": "Password Reset",
+      "email_label": "Email",
+      "email_placeholder": "Enter your email address",
+      "submit_button": "Send Reset Instructions",
+      "description": "Enter your account's email so we can send instructions on how to reset your password."
+    },
+    "reset_password": {
+      "title": "Change your password",
+      "password_label": "New password",
+      "password_placeholder": "Enter your new password",
+      "confirm_password_label": "Confirm new password",
+      "confirm_password_placeholder": "Confirm your new password",
+      "submit_button": "Change my password"
     }
   },
   "general": {
