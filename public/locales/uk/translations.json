@@ -32,7 +32,6 @@
       "email_placeholder": "your@email.com",
       "password_label": "Пароль",
       "password_placeholder": "Ваш пароль",
-      "remember_me": "Запам'ятати мене",
       "forgot_password": "Забув пароль?",
       "submit": "Увійти",
       "divider": "Або продовжити з",
@@ -53,6 +52,21 @@
       "google_button": "Продовжити з Google",
       "login_link": "Уже є аккаунт? Увійти",
       "confirmation_instructions_link": "Не отримали інструкції для підтвердження?"
+    },
+    "forgot_password": {
+      "title": "Відновлення паролю",
+      "email_label": "Email",
+      "email_placeholder": "Введіть вашу електронну адресу",
+      "submit_button": "Надіслати інструкції для відновлення",
+      "description": "Введіть електронну адресу вашого облікового запису, щоб ми могли надіслати інструкції щодо відновлення вашого паролю."
+    },
+    "reset_password": {
+      "title": "Змінити ваш пароль",
+      "password_label": "Новий пароль",
+      "password_placeholder": "Введіть ваш новий пароль",
+      "confirm_password_label": "Підтвердіть новий пароль",
+      "confirm_password_placeholder": "Підтвердіть ваш новий пароль",
+      "submit_button": "Змінити мій пароль"
     }
   },
   "general": {
