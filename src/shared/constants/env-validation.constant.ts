@@ -29,4 +29,7 @@ export const ENV_VALIDATION = {
   [ENV.MAILGUN_DOMAIN]: Joi.string().required(),
   [ENV.MAILGUN_KEY]: Joi.string().required(),
   [ENV.EMAIL_SEND_FROM]: Joi.string().required(),
+
+  [ENV.GIANT_BOMB_API_URL]: Joi.string().required(),
+  [ENV.GIANT_BOMB_API_KEY]: Joi.string().required(),
 };
