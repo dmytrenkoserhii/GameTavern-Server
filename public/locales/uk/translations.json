@@ -36,7 +36,9 @@
       "submit": "Увійти",
       "divider": "Або продовжити з",
       "google": "Продовжити з Google",
-      "register_prompt": "Немає аккаунту? Зареєструватися"
+      "register_prompt": "Немає аккаунту? Зареєструватися",
+      "error_title": "Авторизація не вдалася",
+      "error_message": "Неправильні облікові дані"
     },
     "signup": {
       "username_label": "Ім'я користувача",
@@ -51,7 +53,8 @@
       "register_button": "Зареєструватися",
       "google_button": "Продовжити з Google",
       "login_link": "Уже є аккаунт? Увійти",
-      "confirmation_instructions_link": "Не отримали інструкції для підтвердження?"
+      "confirmation_instructions_link": "Не отримали інструкції для підтвердження?",
+      "error_title": "Реєстрація не вдалася"
     },
     "forgot_password": {
       "title": "Відновлення паролю",

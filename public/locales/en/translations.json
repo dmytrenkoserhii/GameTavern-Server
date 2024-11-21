@@ -36,7 +36,9 @@
       "submit": "Sign in",
       "divider": "Or continue with",
       "google": "Google",
-      "register_prompt": "Don't have an account? Register"
+      "register_prompt": "Don't have an account? Register",
+      "error_title": "Authentication failed",
+      "error_message": "Invalid credentials"
     },
     "signup": {
       "username_label": "Username",
@@ -51,7 +53,8 @@
       "register_button": "Register",
       "google_button": "Continue with Google",
       "login_link": "Already have an account? Log in",
-      "confirmation_instructions_link": "Didn't receive confirmation instructions?"
+      "confirmation_instructions_link": "Didn't receive confirmation instructions?",
+      "error_title": "Registration failed"
     },
     "forgot_password": {
       "title": "Password Reset",
