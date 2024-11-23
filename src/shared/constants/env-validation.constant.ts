@@ -32,4 +32,9 @@ export const ENV_VALIDATION = {
 
   [ENV.GIANT_BOMB_API_URL]: Joi.string().required(),
   [ENV.GIANT_BOMB_API_KEY]: Joi.string().required(),
+
+  [ENV.LEMONSQUEEZY_API_URL]: Joi.string().required(),
+  [ENV.LEMONSQUEEZY_API_KEY]: Joi.string().required(),
+  [ENV.LEMONSQUEEZY_STORE_ID]: Joi.string().required(),
+  [ENV.LEMONSQUEEZY_WEBHOOK_SIGNATURE]: Joi.string().required(),
 };

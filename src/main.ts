@@ -9,7 +9,9 @@ import { AppModule } from '@/app.module';
 import { ENV } from '@/shared/enums';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule, {
+    rawBody: true,
+  });
 
   // Config
   const configService = app.get(ConfigService);

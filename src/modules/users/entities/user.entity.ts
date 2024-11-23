@@ -48,6 +48,9 @@ export class User {
   @Column({ type: 'timestamp', nullable: true, select: false })
   resetPasswordTokenExpiresAt: Date | null;
 
+  @Column({ default: false })
+  isPremium: boolean;
+
   @CreateDateColumn()
   createdAt: Date;
 
