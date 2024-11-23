@@ -45,4 +45,9 @@ export class UpdateUserDto implements Partial<User> {
     format: 'date-time',
   })
   resetPasswordTokenExpiresAt?: Date | null;
+
+  @IsOptional()
+  @IsBoolean()
+  @ApiPropertyOptional({ description: 'Indicates if the user is premium', example: false })
+  isPremium?: boolean;
 }
