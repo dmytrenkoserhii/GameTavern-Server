@@ -1,13 +1,13 @@
 import { BadRequestException, Injectable, Logger } from '@nestjs/common';
 
+import { VerificationService } from '@/modules/users/services/verification.service';
+
 import { SignInDto } from '../dtos/sign-in.dto';
 import { SignUpDto } from '../dtos/sign-up.dto';
 import { Tokens } from '../types/tokens.interface';
 import { User } from './../../users/entities/user.entity';
 import { UsersService } from './../../users/services/users.service';
 import { TokenService } from './token.service';
-
-import { VerificationService } from 'src/modules/users/services/verification.service';
 
 @Injectable()
 export class AuthService {

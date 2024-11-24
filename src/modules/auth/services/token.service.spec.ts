@@ -2,11 +2,11 @@ import { ConfigModule } from '@nestjs/config';
 import { JwtService } from '@nestjs/jwt';
 import { Test, TestingModule } from '@nestjs/testing';
 
-import { TokenService } from './token.service';
+import { User } from '@/modules/users/entities/user.entity';
+import { Role } from '@/modules/users/enums/role.enum';
+import { UsersService } from '@/modules/users/services/users.service';
 
-import { User } from 'src/modules/users/entities/user.entity';
-import { Role } from 'src/modules/users/enums/role.enum';
-import { UsersService } from 'src/modules/users/services/users.service';
+import { TokenService } from './token.service';
 
 jest.mock('bcrypt', () => mockBcrypt());
 

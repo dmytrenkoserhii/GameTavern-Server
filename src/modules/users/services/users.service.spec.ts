@@ -15,9 +15,9 @@ import { UpdateUserDto } from '../dtos/update-user.dto';
 import { User } from '../entities/user.entity';
 import { UsersService } from './users.service';
 
-import { ForgotPasswordDto } from 'src/modules/auth/dtos/forgot-passowrd.dto';
-import { SignUpDto } from 'src/modules/auth/dtos/sign-up.dto';
-import { EmailService } from 'src/shared/services/email.service';
+import { ForgotPasswordDto } from '@/modules/auth/dtos/forgot-passowrd.dto';
+import { SignUpDto } from '@/modules/auth/dtos/sign-up.dto';
+import { EmailService } from '@/shared/services/email.service';
 
 jest.mock('bcrypt', () => ({
   genSalt: jest.fn(),

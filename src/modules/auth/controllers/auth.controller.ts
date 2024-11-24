@@ -4,6 +4,13 @@ import { Body, Controller, Get, HttpCode, HttpStatus, Post, Res, UseGuards } fro
 import { ConfigService } from '@nestjs/config';
 import { ApiBody, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 
+import { ResetPasswordDto } from '@/modules/auth/dtos/reset-password.dto';
+import { UsersService } from '@/modules/users/services/users.service';
+import { CookiesKeys } from '@/shared/enums/cookies-keys.enum';
+import { ENV } from '@/shared/enums/env.enum';
+import { TimePeriods } from '@/shared/enums/time-periods.enum';
+import { CookiesService } from '@/shared/services/cookies.service';
+
 import { CurrentSession } from '../decorators/current-session.decorator';
 import { ForgotPasswordDto } from '../dtos/forgot-passowrd.dto';
 import { SignInDto } from '../dtos/sign-in.dto';
@@ -17,13 +24,6 @@ import { TokenService } from '../services/token.service';
 import { GoogleAuthPayload } from '../types/google-auth-payload.interface';
 import { JwtAccessPayload } from '../types/jwt-access-payload.interface';
 import { JwtRefreshPayload } from '../types/jwt-refresh-payload.interface';
-
-import { ResetPasswordDto } from 'src/modules/auth/dtos/reset-password.dto';
-import { UsersService } from 'src/modules/users/services/users.service';
-import { CookiesKeys } from 'src/shared/enums/cookies-keys.enum';
-import { ENV } from 'src/shared/enums/env.enum';
-import { TimePeriods } from 'src/shared/enums/time-periods.enum';
-import { CookiesService } from 'src/shared/services/cookies.service';
 
 @ApiTags('Auth')
 @Controller('auth')

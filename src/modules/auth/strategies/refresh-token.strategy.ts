@@ -4,10 +4,10 @@ import { ExtractJwt, Strategy } from 'passport-jwt';
 import { Injectable } from '@nestjs/common';
 import { PassportStrategy } from '@nestjs/passport';
 
+import { CookiesKeys } from '@/shared/enums/cookies-keys.enum';
+
 import { JwtAccessPayload } from '../types/jwt-access-payload.interface';
 import { JwtRefreshPayload } from '../types/jwt-refresh-payload.interface';
-
-import { CookiesKeys } from 'src/shared/enums/cookies-keys.enum';
 
 @Injectable()
 export class RefreshTokenStrategy extends PassportStrategy(Strategy, 'jwt-refresh') {

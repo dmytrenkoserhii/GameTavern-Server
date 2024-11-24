@@ -4,18 +4,18 @@ import { Response } from 'express';
 import { INestApplication } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
 
+import { Role } from '@/modules/users/enums/role.enum';
+import { UsersService } from '@/modules/users/services/users.service';
+import { CookiesKeys } from '@/shared/enums/cookies-keys.enum';
+import { TimePeriods } from '@/shared/enums/time-periods.enum';
+import { CookiesService } from '@/shared/services/cookies.service';
+
 import { AuthService } from '../services/auth.service';
 import { TokenService } from '../services/token.service';
 import { GoogleAuthPayload } from '../types/google-auth-payload.interface';
 import { JwtAccessPayload } from '../types/jwt-access-payload.interface';
 import { JwtRefreshPayload } from '../types/jwt-refresh-payload.interface';
 import { AuthController } from './auth.controller';
-
-import { Role } from 'src/modules/users/enums/role.enum';
-import { UsersService } from 'src/modules/users/services/users.service';
-import { CookiesKeys } from 'src/shared/enums/cookies-keys.enum';
-import { TimePeriods } from 'src/shared/enums/time-periods.enum';
-import { CookiesService } from 'src/shared/services/cookies.service';
 
 // TODO: check the correct way to test controllers. Test all other controllers.
 describe('AuthController', () => {

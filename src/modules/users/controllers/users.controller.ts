@@ -10,14 +10,14 @@ import {
 } from '@nestjs/common';
 import { ApiBearerAuth, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 
+import { CurrentSession } from '@/modules/auth/decorators/current-session.decorator';
+import { AccessTokenGuard } from '@/modules/auth/guards/access-token.guard';
+import { JwtAccessPayload } from '@/modules/auth/types/jwt-access-payload.interface';
+
 import { ConfirmEmailDto } from '../dtos/confirm-email.dto';
 import { User } from '../entities/user.entity';
 import { UsersService } from '../services/users.service';
 import { VerificationService } from './../services/verification.service';
-
-import { CurrentSession } from 'src/modules/auth/decorators/current-session.decorator';
-import { AccessTokenGuard } from 'src/modules/auth/guards/access-token.guard';
-import { JwtAccessPayload } from 'src/modules/auth/types/jwt-access-payload.interface';
 
 @ApiTags('Users')
 @Controller('users')

@@ -4,12 +4,12 @@ import { Injectable, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { JwtService } from '@nestjs/jwt';
 
+import { User } from '@/modules/users/entities/user.entity';
+import { Role } from '@/modules/users/enums/role.enum';
+
 import { ENV } from '../../../shared/enums/env.enum';
 import { Tokens } from '../types/tokens.interface';
 import { UsersService } from './../../users/services/users.service';
-
-import { User } from 'src/modules/users/entities/user.entity';
-import { Role } from 'src/modules/users/enums/role.enum';
 
 @Injectable()
 export class TokenService {

@@ -3,12 +3,12 @@ import axios, { AxiosResponse } from 'axios';
 import { Injectable, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 
+import { ENV } from '@/shared/enums/env.enum';
+
 import { ApiListGame } from '../types/api-list-game.interface';
 import { ApiPlatform } from '../types/api-platform.interface';
 import { ApiSingleGame } from '../types/api-single-game.inteface';
 import { GiantBombResponse } from '../types/giantbomb-response.interface';
-
-import { ENV } from 'src/shared/enums/env.enum';
 
 @Injectable()
 export class GamesApiService {

@@ -13,6 +13,11 @@ import {
 import { ConfigService } from '@nestjs/config';
 import { InjectRepository } from '@nestjs/typeorm';
 
+import { ForgotPasswordDto } from '@/modules/auth/dtos/forgot-passowrd.dto';
+import { SignUpDto } from '@/modules/auth/dtos/sign-up.dto';
+import { ENV } from '@/shared/enums/env.enum';
+import { EmailService } from '@/shared/services/email.service';
+
 import { ResetPasswordDto } from '../../auth/dtos/reset-password.dto';
 import { CreateUserWithoutPasswordDto } from '../dtos/create-user-without-password.dto';
 import { UpdateUserDto } from '../dtos/update-user.dto';
@@ -20,11 +25,6 @@ import { User } from '../entities/user.entity';
 import { TimePeriods } from './../../../shared/enums/time-periods.enum';
 import { generateRandomToken } from './../../../utils/generate-random-token';
 import { AccountService } from './account.service';
-
-import { ForgotPasswordDto } from 'src/modules/auth/dtos/forgot-passowrd.dto';
-import { SignUpDto } from 'src/modules/auth/dtos/sign-up.dto';
-import { ENV } from 'src/shared/enums/env.enum';
-import { EmailService } from 'src/shared/services/email.service';
 
 @Injectable()
 export class UsersService {

@@ -2,7 +2,7 @@ import * as crypto from 'crypto';
 
 import axios, { AxiosInstance } from 'axios';
 
-import { HttpException, HttpStatus, Inject, Injectable, NotFoundException } from '@nestjs/common';
+import { HttpException, HttpStatus, Inject, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 
 import { UsersService } from '@/modules/users/services/users.service';

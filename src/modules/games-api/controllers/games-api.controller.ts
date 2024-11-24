@@ -17,17 +17,17 @@ import {
   ApiTags,
 } from '@nestjs/swagger';
 
+import { Roles } from '@/modules/auth/decorators/roles.decorator';
+import { AccessTokenGuard } from '@/modules/auth/guards/access-token.guard';
+import { RolesGuard } from '@/modules/auth/guards/roles.guard';
+import { Role } from '@/modules/users/enums/role.enum';
+
 import { ALL_API_GAMES_RESPONSE_EXAMPLE_DATA } from '../constants/all-api-games-response-example-data.constant';
 import { ALL_API_PLATFORMS_RESPONSE_EXAMPLE_DATA } from '../constants/all-api-platforms-response-example-data.constant';
 import { SINGLE_API_GAME_RESPONSE_EXAMPLE_DATA } from '../constants/single-api-game-response-example-data.constant';
 import { GamesApiService } from '../services/games-api.service';
 import { ApiListGame } from '../types/api-list-game.interface';
 import { ApiSingleGame } from '../types/api-single-game.inteface';
-
-import { Roles } from 'src/modules/auth/decorators/roles.decorator';
-import { AccessTokenGuard } from 'src/modules/auth/guards/access-token.guard';
-import { RolesGuard } from 'src/modules/auth/guards/roles.guard';
-import { Role } from 'src/modules/users/enums/role.enum';
 
 @ApiBearerAuth()
 @Roles(Role.USER, Role.ADMIN)

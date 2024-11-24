@@ -4,11 +4,11 @@ import { Inject, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { PassportStrategy } from '@nestjs/passport';
 
-import { GoogleProfile } from './../types/google-profile.interface';
+import { AccountService } from '@/modules/users/services/account.service';
+import { UsersService } from '@/modules/users/services/users.service';
+import { ENV } from '@/shared/enums/env.enum';
 
-import { AccountService } from 'src/modules/users/services/account.service';
-import { UsersService } from 'src/modules/users/services/users.service';
-import { ENV } from 'src/shared/enums/env.enum';
+import { GoogleProfile } from './../types/google-profile.interface';
 
 @Injectable()
 export class GoogleStrategy extends PassportStrategy(Strategy, 'google') {
