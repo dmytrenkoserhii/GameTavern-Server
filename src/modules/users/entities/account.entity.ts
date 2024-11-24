@@ -24,13 +24,7 @@ export class Account {
   lastName: string;
 
   @Column({ nullable: true })
-  biography: string;
-
-  @Column({ nullable: true })
   birthDate: string;
-
-  @Column({ nullable: true })
-  phone: string;
 
   @Column({ nullable: true })
   avatar: string;
@@ -43,18 +37,4 @@ export class Account {
 
   @OneToOne(() => User, (user) => user.account)
   user: User;
-
-  checkIfFullyFilled(): boolean {
-    const accountFields = [
-      this.username,
-      this.firstName,
-      this.lastName,
-      this.biography,
-      this.birthDate,
-      this.phone,
-      this.avatar,
-    ];
-
-    return accountFields.every((field) => field !== null && field !== undefined);
-  }
 }

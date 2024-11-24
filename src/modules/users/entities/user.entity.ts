@@ -30,9 +30,6 @@ export class User {
   })
   role: Role;
 
-  @Column({ default: false })
-  isAccountFilled: boolean;
-
   @Column({ nullable: true, type: 'text', select: false })
   refreshToken: string | null;
 

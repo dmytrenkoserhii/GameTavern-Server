@@ -32,26 +32,10 @@ export class UpdateAccountDto implements Partial<Account> {
   @IsOptional()
   @IsString()
   @ApiPropertyOptional({
-    description: 'Biography of the account holder',
-    example: 'Software developer passionate about creating innovative solutions.',
-  })
-  biography?: string;
-
-  @IsOptional()
-  @IsString()
-  @ApiPropertyOptional({
     description: 'Birth date of the account holder',
     example: '1990-01-15',
   })
   birthDate?: string;
-
-  @IsOptional()
-  @IsString()
-  @ApiPropertyOptional({
-    description: 'Phone number of the account holder',
-    example: '+1 (555) 123-4567',
-  })
-  phone?: string;
 
   @IsOptional()
   @IsString()

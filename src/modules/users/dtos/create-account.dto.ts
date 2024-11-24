@@ -34,29 +34,11 @@ export class CreateAccountDto implements Partial<Account> {
   @IsOptional()
   @IsString()
   @ApiProperty({
-    description: 'Biography of the account holder',
-    required: false,
-    example: 'Software developer and tech enthusiast.',
-  })
-  biography?: string;
-
-  @IsOptional()
-  @IsString()
-  @ApiProperty({
     description: 'Birth date of the account holder',
     required: false,
     example: '1990-01-15',
   })
   birthDate?: string;
-
-  @IsOptional()
-  @IsString()
-  @ApiProperty({
-    description: 'Phone number of the account holder',
-    required: false,
-    example: '+1234567890',
-  })
-  phone?: string;
 
   @IsOptional()
   @IsString()

@@ -21,14 +21,6 @@ export class UpdateUserDto implements Partial<User> {
 
   @IsOptional()
   @IsBoolean()
-  @ApiPropertyOptional({
-    description: 'Indicates if the user profile is fully filled',
-    example: false,
-  })
-  isFullyFilled?: boolean;
-
-  @IsOptional()
-  @IsBoolean()
   @ApiPropertyOptional({ description: 'Indicates if the user email is verified', example: false })
   isEmailVerified?: boolean;
 
