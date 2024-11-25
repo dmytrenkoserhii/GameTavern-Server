@@ -80,6 +80,13 @@
       "message": "Your email is being verified. Please wait..."
     }
   },
+  "lists": {
+    "create_list": "Create list",
+    "display_mode_selector": {
+      "grid": "Grid",
+      "list": "List"
+    }
+  },
   "general": {
     "sign_in": "Sign in"
   }
