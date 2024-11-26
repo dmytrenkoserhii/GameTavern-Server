@@ -82,6 +82,7 @@
   },
   "lists": {
     "create_list": "Create list",
+    "edit_list_button": "Edit list",
     "display_mode_selector": {
       "grid": "Grid",
       "list": "List"

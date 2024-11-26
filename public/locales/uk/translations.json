@@ -82,6 +82,7 @@
   },
   "lists": {
     "create_list": "Створити список",
+    "edit_list_button": "Редагувати список",
     "display_mode_selector": {
       "grid": "Сітка",
       "list": "Список"
