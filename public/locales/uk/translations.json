@@ -86,9 +86,29 @@
     "display_mode_selector": {
       "grid": "Сітка",
       "list": "Список"
+    },
+    "filter_bar": {
+      "filter_button": "Фільтри",
+      "drawer_title": "Фільтри",
+      "release_year": {
+        "label": "Рік випуску",
+        "placeholder": "Оберіть рік"
+      }
+    },
+    "sort_options": {
+      "list_games": {
+        "custom_order": "Порядок користувача",
+        "game_title": "Назва гри",
+        "release_date": "Дата випуску"
+      },
+      "lists": {
+        "newest": "Нові",
+        "oldest": "Старі"
+      }
     }
   },
   "general": {
-    "sign_in": "Увійти"
+    "sign_in": "Увійти",
+    "save_changes": "Зберегти зміни"
   }
 }
