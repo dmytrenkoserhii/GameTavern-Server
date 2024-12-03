@@ -86,9 +86,29 @@
     "display_mode_selector": {
       "grid": "Grid",
       "list": "List"
+    },
+    "filter_bar": {
+      "filter_button": "Filters",
+      "drawer_title": "Filters",
+      "release_year": {
+        "label": "Release Year",
+        "placeholder": "Choose a year"
+      }
+    },
+    "sort_options": {
+      "list_games": {
+        "custom_order": "Custom Order",
+        "game_title": "Game Title",
+        "release_date": "Release Date"
+      },
+      "lists": {
+        "newest": "Newest",
+        "oldest": "Oldest"
+      }
     }
   },
   "general": {
-    "sign_in": "Sign in"
+    "sign_in": "Sign in",
+    "save_changes": "Save Changes"
   }
 }
