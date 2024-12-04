@@ -83,6 +83,8 @@
   "lists": {
     "create_list": "Create list",
     "edit_list_button": "Edit list",
+    "name_placeholder": "Enter list name...",
+    "description_placeholder": "Enter list description...",
     "display_mode_selector": {
       "grid": "Grid",
       "list": "List"
