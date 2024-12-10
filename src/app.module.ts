@@ -12,6 +12,8 @@ import { PaymentsModule } from '@/modules/payments/payments.module';
 import { UsersModule } from '@/modules/users/users.module';
 import { ENV_VALIDATION } from '@/shared/constants';
 
+import { ListsModule } from './modules/lists/lists.module';
+
 const ENVIRONMENT = process.env.NODE_ENV;
 
 @Module({
@@ -30,6 +32,7 @@ const ENVIRONMENT = process.env.NODE_ENV;
     UsersModule,
     GamesApiModule,
     PaymentsModule,
+    ListsModule,
   ],
 })
 export class AppModule {}
