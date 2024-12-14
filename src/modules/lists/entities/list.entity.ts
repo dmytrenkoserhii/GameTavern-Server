@@ -2,9 +2,12 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  ManyToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
+
+import { User } from '@/modules/users/entities/user.entity';
 
 @Entity('lists')
 export class List {
@@ -22,4 +25,7 @@ export class List {
 
   @UpdateDateColumn()
   updatedAt: Date;
+
+  @ManyToOne(() => User, (user) => user.lists)
+  user: User;
 }
