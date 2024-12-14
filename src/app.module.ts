@@ -8,6 +8,7 @@ import { ServeStaticModule } from '@nestjs/serve-static';
 import { AuthModule } from '@/modules/auth/auth.module';
 import { DatabaseModule } from '@/modules/database/database.module';
 import { GamesApiModule } from '@/modules/games-api/games-api.module';
+import { ListsModule } from '@/modules/lists/lists.module';
 import { PaymentsModule } from '@/modules/payments/payments.module';
 import { UsersModule } from '@/modules/users/users.module';
 import { ENV_VALIDATION } from '@/shared/constants';
@@ -30,6 +31,7 @@ const ENVIRONMENT = process.env.NODE_ENV;
     UsersModule,
     GamesApiModule,
     PaymentsModule,
+    ListsModule,
   ],
 })
 export class AppModule {}

@@ -4,10 +4,13 @@ import {
   CreateDateColumn,
   Entity,
   JoinColumn,
+  OneToMany,
   OneToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
+
+import { List } from '@/modules/lists/entities/list.entity';
 
 import { Role } from '../enums/role.enum';
 import { Account } from './account.entity';
@@ -57,6 +60,9 @@ export class User {
   @OneToOne(() => Account, (account) => account.user)
   @JoinColumn()
   account: Account;
+
+  @OneToMany(() => List, (list) => list.user)
+  lists: List[];
 
   async validatePassword(password: string): Promise<boolean> {
     if (!this.hashedPassword) {
