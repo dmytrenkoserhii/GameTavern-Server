@@ -83,6 +83,7 @@
   "lists": {
     "create_list": "Create list",
     "edit_list_button": "Edit list",
+    "delete_list_button": "Delete list",
     "name_placeholder": "Enter list name...",
     "description_placeholder": "Enter list description...",
     "display_mode_selector": {
