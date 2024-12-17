@@ -26,7 +26,8 @@ export class ListsService {
   ): Promise<PaginatedResponse<List>> {
     const queryBuilder = this.listRepository
       .createQueryBuilder('list')
-      .where('list.userId = :userId', { userId })
+      .leftJoinAndSelect('list.user', 'user')
+      .where('user.id = :userId', { userId })
       .skip((page - 1) * limit)
       .take(limit);
 
