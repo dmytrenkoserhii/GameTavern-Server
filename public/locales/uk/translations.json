@@ -83,6 +83,7 @@
   "lists": {
     "create_list": "Створити список",
     "edit_list_button": "Редагувати список",
+    "delete_list_button": "Видалити список",
     "name_placeholder": "Введіть назву списку...",
     "description_placeholder": "Введіть опис списку...",
     "display_mode_selector": {
