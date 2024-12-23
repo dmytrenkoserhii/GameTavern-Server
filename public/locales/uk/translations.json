@@ -110,6 +110,26 @@
       }
     }
   },
+  "games_api": {
+    "filter_bar": {
+      "filter_button": "Фільтри",
+      "drawer_title": "Фільтри",
+      "release_year": {
+        "label": "Рік випуску",
+        "placeholder": "Оберіть рік"
+      },
+      "platform": {
+        "label": "Платформа",
+        "placeholder": "Оберіть платформу"
+      },
+      "sort_options": {
+        "name_asc": "Назва гри (a-z)",
+        "name_desc": "Назва гри (z-a)",
+        "release_date_newest": "Дата випуску (нове)",
+        "release_date_oldest": "Дата випуску (старе)"
+      }
+    }
+  },
   "general": {
     "sign_in": "Увійти",
     "save_changes": "Зберегти зміни"

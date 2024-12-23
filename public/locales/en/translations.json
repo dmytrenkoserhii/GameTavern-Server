@@ -110,6 +110,26 @@
       }
     }
   },
+  "games_api": {
+    "filter_bar": {
+      "filter_button": "Filters",
+      "drawer_title": "Filters",
+      "release_year": {
+        "label": "Release Year",
+        "placeholder": "Choose a year"
+      },
+      "platform": {
+        "label": "Platform",
+        "placeholder": "Select platform"
+      }
+    },
+    "sort_options": {
+      "name_asc": "Game Title (a-z)",
+      "name_desc": "Game Title (z-a)",
+      "release_date_newest": "Release Date (newest)",
+      "release_date_oldest": "Release Date (oldest)"
+    }
+  },
   "general": {
     "sign_in": "Sign in",
     "save_changes": "Save Changes"
