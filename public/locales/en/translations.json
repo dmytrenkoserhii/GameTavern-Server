@@ -124,10 +124,20 @@
       }
     },
     "sort_options": {
-      "name_asc": "Game Title (a-z)",
-      "name_desc": "Game Title (z-a)",
-      "release_date_newest": "Release Date (newest)",
-      "release_date_oldest": "Release Date (oldest)"
+      "name_asc": "Title (a-z)",
+      "name_desc": "Title (z-a)",
+      "release_date_newest": "Year (newest)",
+      "release_date_oldest": "Year (oldest)"
+    },
+    "game_page": {
+      "not_found_title": "Game Not Found",
+      "not_found_description": "Sorry, we couldn't find the game you're looking for.",
+      "back_to_games": "Back to Games"
+    },
+    "games_page": {
+      "not_found_title": "Games Not Found",
+      "not_found_description": "Sorry, something went wrong. Please try again later.",
+      "back_to_games": "Back to Games"
     }
   },
   "general": {

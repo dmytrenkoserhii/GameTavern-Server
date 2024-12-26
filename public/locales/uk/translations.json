@@ -121,13 +121,23 @@
       "platform": {
         "label": "Платформа",
         "placeholder": "Оберіть платформу"
-      },
-      "sort_options": {
-        "name_asc": "Назва гри (a-z)",
-        "name_desc": "Назва гри (z-a)",
-        "release_date_newest": "Дата випуску (нове)",
-        "release_date_oldest": "Дата випуску (старе)"
       }
+    },
+    "sort_options": {
+      "name_asc": "Назва (a-z)",
+      "name_desc": "Назва (z-a)",
+      "release_date_newest": "Рік (нове)",
+      "release_date_oldest": "Рік (старе)"
+    },
+    "game_page": {
+      "not_found_title": "Гра не знайдена",
+      "not_found_description": "Вибачте, ми не змогли знайти гру, яку ви шукаєте.",
+      "back_to_games": "Назад до ігор"
+    },
+    "games_page": {
+      "not_found_title": "Ігри не знайдено",
+      "not_found_description": "Вибачте, щось пішло не так. Будь ласка, спробуйте ще раз пізніше.",
+      "back_to_games": "Назад до ігор"
     }
   },
   "general": {
