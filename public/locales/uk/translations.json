@@ -110,6 +110,36 @@
       }
     }
   },
+  "games_api": {
+    "filter_bar": {
+      "filter_button": "Фільтри",
+      "drawer_title": "Фільтри",
+      "release_year": {
+        "label": "Рік випуску",
+        "placeholder": "Оберіть рік"
+      },
+      "platform": {
+        "label": "Платформа",
+        "placeholder": "Оберіть платформу"
+      }
+    },
+    "sort_options": {
+      "name_asc": "Назва (a-z)",
+      "name_desc": "Назва (z-a)",
+      "release_date_newest": "Рік (нове)",
+      "release_date_oldest": "Рік (старе)"
+    },
+    "game_page": {
+      "not_found_title": "Гра не знайдена",
+      "not_found_description": "Вибачте, ми не змогли знайти гру, яку ви шукаєте.",
+      "back_to_games": "Назад до ігор"
+    },
+    "games_page": {
+      "not_found_title": "Ігри не знайдено",
+      "not_found_description": "Вибачте, щось пішло не так. Будь ласка, спробуйте ще раз пізніше.",
+      "back_to_games": "Назад до ігор"
+    }
+  },
   "general": {
     "sign_in": "Увійти",
     "save_changes": "Зберегти зміни"

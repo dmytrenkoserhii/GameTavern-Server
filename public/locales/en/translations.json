@@ -110,6 +110,36 @@
       }
     }
   },
+  "games_api": {
+    "filter_bar": {
+      "filter_button": "Filters",
+      "drawer_title": "Filters",
+      "release_year": {
+        "label": "Release Year",
+        "placeholder": "Choose a year"
+      },
+      "platform": {
+        "label": "Platform",
+        "placeholder": "Select platform"
+      }
+    },
+    "sort_options": {
+      "name_asc": "Title (a-z)",
+      "name_desc": "Title (z-a)",
+      "release_date_newest": "Year (newest)",
+      "release_date_oldest": "Year (oldest)"
+    },
+    "game_page": {
+      "not_found_title": "Game Not Found",
+      "not_found_description": "Sorry, we couldn't find the game you're looking for.",
+      "back_to_games": "Back to Games"
+    },
+    "games_page": {
+      "not_found_title": "Games Not Found",
+      "not_found_description": "Sorry, something went wrong. Please try again later.",
+      "back_to_games": "Back to Games"
+    }
+  },
   "general": {
     "sign_in": "Sign in",
     "save_changes": "Save Changes"
