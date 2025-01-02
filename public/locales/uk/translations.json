@@ -131,13 +131,13 @@
     },
     "game_page": {
       "not_found_title": "Гра не знайдена",
-      "not_found_description": "Вибачте, ми не змогли знайти гру, яку ви шукаєте.",
-      "back_to_games": "Назад до ігор"
+      "not_found_description": "Вибачте, щось пішло не так. Будь ласка, спробуйте ще раз пізніше.",
+      "back_to_games": "Назад на головну"
     },
     "games_page": {
       "not_found_title": "Ігри не знайдено",
       "not_found_description": "Вибачте, щось пішло не так. Будь ласка, спробуйте ще раз пізніше.",
-      "back_to_games": "Назад до ігор"
+      "back_to_games": "Назад на головну"
     }
   },
   "general": {
