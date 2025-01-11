@@ -13,6 +13,8 @@ import { PaymentsModule } from '@/modules/payments/payments.module';
 import { UsersModule } from '@/modules/users/users.module';
 import { ENV_VALIDATION } from '@/shared/constants';
 
+import { GamesModule } from './modules/games/games.module';
+
 const ENVIRONMENT = process.env.NODE_ENV;
 
 @Module({
@@ -29,6 +31,7 @@ const ENVIRONMENT = process.env.NODE_ENV;
     DatabaseModule,
     AuthModule,
     UsersModule,
+    GamesModule,
     GamesApiModule,
     PaymentsModule,
     ListsModule,
