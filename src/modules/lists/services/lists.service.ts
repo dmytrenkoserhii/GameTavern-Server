@@ -2,7 +2,7 @@ import { createPaginatedResponse } from '@shared/utils/create-paginated-response
 
 import { Repository } from 'typeorm';
 
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { ForbiddenException, Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 
 import { PaginatedResponse } from '@/shared/types/paginated-response.interface';
@@ -65,5 +65,15 @@ export class ListsService {
   public async delete(id: number): Promise<void> {
     const list = await this.findOneById(id);
     await this.listRepository.remove(list);
+  }
+
+  async validateListOwnership(listId: number, userId: number): Promise<void> {
+    const list = await this.listRepository.findOne({
+      where: { id: listId, user: { id: userId } },
+    });
+
+    if (!list) {
+      throw new ForbiddenException('You do not own this list');
+    }
   }
 }
