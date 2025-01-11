@@ -140,6 +140,27 @@
       "back_to_games": "Back to Home"
     }
   },
+  "games": {
+    "add_to_list": "Add to List",
+    "select_list": "Select List",
+    "select_list_placeholder": "Choose a list...",
+    "add_to_list_confirm": "Add to List",
+    "add_success": "Success",
+    "add_success_message": "Game added to list successfully",
+    "add_error": "Error",
+    "add_error_message": "Failed to add game to list",
+    "count": "Games",
+    "game_card": {
+      "move_to_list": "Move to List",
+      "remove_from_list": "Remove from List",
+      "move_confirm": "Move Game",
+      "select_list_placeholder": "Choose a list...",
+      "move_success": "Success",
+      "move_success_message": "Game moved successfully",
+      "remove_success": "Success",
+      "remove_success_message": "Game removed successfully"
+    }
+  },
   "general": {
     "sign_in": "Sign in",
     "save_changes": "Save Changes"
