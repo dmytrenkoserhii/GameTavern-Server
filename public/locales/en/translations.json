@@ -152,17 +152,18 @@
     "count": "Games",
     "game_card": {
       "move_to_list": "Move to List",
-      "remove_from_list": "Remove from List",
       "move_confirm": "Move Game",
       "select_list_placeholder": "Choose a list...",
       "move_success": "Success",
       "move_success_message": "Game moved successfully",
-      "remove_success": "Success",
-      "remove_success_message": "Game removed successfully"
+      "delete_from_list": "Delete from List",
+      "delete_success": "Success",
+      "delete_success_message": "Game removed successfully"
     }
   },
   "general": {
     "sign_in": "Sign in",
-    "save_changes": "Save Changes"
+    "save_changes": "Save Changes",
+    "cancel_changes": "Cancel Changes"
   }
 }

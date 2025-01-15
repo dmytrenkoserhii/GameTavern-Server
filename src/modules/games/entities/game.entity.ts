@@ -1,9 +1,9 @@
-import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn, Unique } from 'typeorm';
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn, Unique } from 'typeorm';
 
 import { List } from '@/modules/lists/entities/list.entity';
 
 @Entity('games')
-@Unique(['gameApiId', 'listId'])
+@Unique(['gameApiId', 'list'])
 export class Game {
   @PrimaryGeneratedColumn()
   id: number;
@@ -20,10 +20,8 @@ export class Game {
   @Column()
   orderNumber: number;
 
-  @Column()
-  listId: number;
-
-  @ManyToOne(() => List, (list) => list.games)
-  @JoinColumn({ name: 'listId' })
+  @ManyToOne(() => List, (list) => list.games, {
+    onDelete: 'CASCADE',
+  })
   list: List;
 }

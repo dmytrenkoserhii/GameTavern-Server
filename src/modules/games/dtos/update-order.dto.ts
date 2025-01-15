@@ -1,17 +1,17 @@
 import { Type } from 'class-transformer';
 import { IsArray, IsNumber, ValidateNested } from 'class-validator';
 
-class GameOrderItem {
+export class UpdateOrderDto {
+  @IsArray()
+  @ValidateNested({ each: true })
+  @Type(() => OrderItem)
+  updates: OrderItem[];
+}
+
+class OrderItem {
   @IsNumber()
   id: number;
 
   @IsNumber()
   orderNumber: number;
-}
-
-export class UpdateGameOrderDto {
-  @IsArray()
-  @ValidateNested({ each: true })
-  @Type(() => GameOrderItem)
-  updates: GameOrderItem[];
 }

@@ -152,17 +152,18 @@
     "count": "Гри",
     "game_card": {
       "move_to_list": "Перемістити до списку",
-      "remove_from_list": "Видалити зі списку",
       "move_confirm": "Перемістити гру",
       "select_list_placeholder": "Оберіть список...",
       "move_success": "Успіх",
       "move_success_message": "Гра успішно переміщена до списку",
-      "remove_success": "Успіх",
-      "remove_success_message": "Гра успішно видалена зі списку"
+      "delete_from_list": "Видалити зі списку",
+      "delete_success": "Успіх",
+      "delete_success_message": "Гра успішно видалена зі списку"
     }
   },
   "general": {
     "sign_in": "Увійти",
-    "save_changes": "Зберегти зміни"
+    "save_changes": "Зберегти зміни",
+    "cancel_changes": "Скасувати зміни"
   }
 }

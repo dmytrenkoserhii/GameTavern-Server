@@ -2,7 +2,7 @@ import { IsNotEmpty, IsNumber, IsOptional, IsString } from 'class-validator';
 
 import { ApiProperty } from '@nestjs/swagger';
 
-export class AddGameDto {
+export class CreateDto {
   @ApiProperty()
   @IsNumber()
   @IsNotEmpty()

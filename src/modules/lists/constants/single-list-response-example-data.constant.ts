@@ -16,7 +16,6 @@ export const SINGLE_LIST_RESPONSE_EXAMPLE_DATA: List = {
       name: 'The Witcher 3: Wild Hunt',
       coverUrl: 'https://example.com/witcher3.jpg',
       orderNumber: 1,
-      listId: 1,
       list: { id: 1 } as List,
     },
   ],

@@ -42,7 +42,10 @@ export class ListsService {
   }
 
   public async findOneById(id: number): Promise<List> {
-    const list = await this.listRepository.findOne({ where: { id } });
+    const list = await this.listRepository.findOne({
+      where: { id },
+      relations: ['games'],
+    });
 
     if (!list) {
       throw new NotFoundException(`List with ID ${id} not found`);

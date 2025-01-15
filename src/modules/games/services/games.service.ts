@@ -3,10 +3,11 @@ import { Repository } from 'typeorm';
 import { ConflictException, Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 
+import { List } from '@/modules/lists/entities/list.entity';
 import { ListsService } from '@/modules/lists/services/lists.service';
 
-import { AddGameDto } from '../dtos/add-game.dto';
-import { MoveGameDto } from '../dtos/move-game.dto';
+import { CreateDto } from '../dtos/create-game.dto';
+import { MoveDto } from '../dtos/move.dto';
 import { Game } from '../entities/game.entity';
 
 @Injectable()
@@ -17,11 +18,24 @@ export class GamesService {
     private readonly listsService: ListsService,
   ) {}
 
-  async addGame(addGameDto: AddGameDto): Promise<Game> {
+  async getAll(listId: number, userId: number): Promise<Game[]> {
+    return this.gamesRepository.find({
+      where: {
+        list: {
+          id: listId,
+          user: { id: userId },
+        },
+      },
+      relations: ['list', 'list.user'],
+      order: { orderNumber: 'ASC' },
+    });
+  }
+
+  async create(createDto: CreateDto): Promise<Game> {
     const existingGame = await this.gamesRepository.findOne({
       where: {
-        gameApiId: addGameDto.gameApiId,
-        listId: addGameDto.listId,
+        gameApiId: createDto.gameApiId,
+        list: { id: createDto.listId },
       },
     });
 
@@ -31,84 +45,70 @@ export class GamesService {
 
     const maxOrderGame = await this.gamesRepository
       .createQueryBuilder('game')
-      .where('game.listId = :listId', { listId: addGameDto.listId })
-      .orderBy('game.orderNumber', 'DESC')
-      .getOne();
+      .select('MAX(game.orderNumber)', 'maxOrder')
+      .where('game.list = :listId', { listId: createDto.listId })
+      .getRawOne();
 
     const newGame = this.gamesRepository.create({
-      ...addGameDto,
-      orderNumber: maxOrderGame ? maxOrderGame.orderNumber + 1 : 1,
+      ...createDto,
+      list: { id: createDto.listId },
+      orderNumber: maxOrderGame ? maxOrderGame.maxOrder + 1 : 1,
     });
 
     return this.gamesRepository.save(newGame);
   }
 
-  async moveGame(id: number, moveGameDto: MoveGameDto, userId: number): Promise<Game> {
+  async move(id: number, moveDto: MoveDto, userId: number): Promise<Game> {
     const game = await this.gamesRepository.findOne({
-      where: { id },
-      relations: ['list'],
+      where: {
+        id,
+        list: {
+          user: { id: userId },
+        },
+      },
+      relations: ['list', 'list.user'],
     });
 
     if (!game) {
-      throw new NotFoundException('Game not found');
+      throw new NotFoundException('Game not found or access denied');
     }
 
-    await this.listsService.validateListOwnership(game.list.id, userId);
-    await this.listsService.validateListOwnership(moveGameDto.targetListId, userId);
-
-    await this.gamesRepository
-      .createQueryBuilder()
-      .update(Game)
-      .set({ listId: moveGameDto.targetListId })
-      .where('id = :id', { id })
-      .execute();
-
-    const updatedGame = await this.gamesRepository.findOne({
-      where: { id },
-      relations: ['list'],
-    });
-
-    if (!updatedGame) {
-      throw new NotFoundException('Game not found after update');
-    }
-
-    return updatedGame;
+    game.list = { id: moveDto.targetListId } as List;
+    return this.gamesRepository.save(game);
   }
 
-  async removeGame(gameId: number, userId: number): Promise<void> {
+  async delete(id: number, userId: number): Promise<void> {
     const game = await this.gamesRepository.findOne({
-      where: { id: gameId },
-      relations: ['list'],
+      where: {
+        id,
+        list: {
+          user: { id: userId },
+        },
+      },
+      relations: ['list', 'list.user'],
     });
 
     if (!game) {
-      throw new NotFoundException('Game not found');
+      throw new NotFoundException('Game not found or access denied');
     }
-
-    await this.listsService.validateListOwnership(game.list.id, userId);
 
     await this.gamesRepository.remove(game);
   }
 
-  async getGamesByListId(listId: number): Promise<Game[]> {
-    return this.gamesRepository.find({
-      where: { listId },
-      order: { orderNumber: 'ASC' },
-    });
-  }
+  async updateOrder(updates: { id: number; orderNumber: number }[]): Promise<void> {
+    const cases = updates.map((item) => `WHEN id = ${item.id} THEN ${item.orderNumber}`).join(' ');
 
-  async updateGameOrder(updates: { id: number; orderNumber: number }[]): Promise<void> {
-    await this.gamesRepository.manager.transaction(async (transactionalEntityManager) => {
-      const updatePromises = updates.map(({ id, orderNumber }) =>
-        transactionalEntityManager
-          .createQueryBuilder()
-          .update(Game)
-          .set({ orderNumber })
-          .where('id = :id', { id })
-          .execute(),
-      );
+    const ids = updates.map((item) => item.id).join(',');
 
-      await Promise.all(updatePromises);
-    });
+    const query = `
+      UPDATE games 
+      SET "orderNumber" = CASE 
+        ${cases}
+        ELSE "orderNumber" 
+      END 
+      WHERE id IN (${ids})
+    `;
+
+    await this.gamesRepository.query(query);
   }
 }

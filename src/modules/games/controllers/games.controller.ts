@@ -15,9 +15,9 @@ import { CurrentSession } from '@/modules/auth/decorators/current-session.decora
 import { AccessTokenGuard } from '@/modules/auth/guards/access-token.guard';
 import { JwtAccessPayload } from '@/modules/auth/types/jwt-access-payload.interface';
 
-import { AddGameDto } from '../dtos/add-game.dto';
-import { MoveGameDto } from '../dtos/move-game.dto';
-import { UpdateGameOrderDto } from '../dtos/update-game-order.dto';
+import { CreateDto } from '../dtos/create-game.dto';
+import { MoveDto } from '../dtos/move.dto';
+import { UpdateOrderDto } from '../dtos/update-order.dto';
 import { Game } from '../entities/game.entity';
 import { GamesService } from '../services/games.service';
 
@@ -27,41 +27,43 @@ import { GamesService } from '../services/games.service';
 export class GamesController {
   constructor(private readonly gamesService: GamesService) {}
 
-  @Post()
-  @ApiOperation({ summary: 'Add a game to a list' })
-  async addGame(@Body() addGameDto: AddGameDto): Promise<Game> {
-    return this.gamesService.addGame(addGameDto);
+  @Get('list/:listId')
+  async getAll(
+    @Param('listId', ParseIntPipe) listId: number,
+    @CurrentSession() session: JwtAccessPayload,
+  ): Promise<Game[]> {
+    return this.gamesService.getAll(listId, session.sub);
   }
 
-  @Delete(':id')
-  @ApiOperation({ summary: 'Remove a game from a list' })
-  async removeGame(
-    @Param('id', ParseIntPipe) id: number,
-    @CurrentSession() session: JwtAccessPayload,
-  ): Promise<void> {
-    return this.gamesService.removeGame(id, session.sub);
+  @Post()
+  @ApiOperation({ summary: 'Add a game to a list' })
+  async create(@Body() createDto: CreateDto): Promise<Game> {
+    return this.gamesService.create(createDto);
   }
 
   @Patch(':id/move')
   @ApiOperation({ summary: 'Move a game to another list' })
-  async moveGame(
+  async move(
     @Param('id', ParseIntPipe) id: number,
-    @Body() moveGameDto: MoveGameDto,
+    @Body() moveDto: MoveDto,
     @CurrentSession() session: JwtAccessPayload,
   ): Promise<Game> {
-    return this.gamesService.moveGame(id, moveGameDto, session.sub);
-  }
-
-  @Get('list/:listId')
-  @ApiOperation({ summary: 'Get all games in a list' })
-  async getGamesByList(@Param('listId', ParseIntPipe) listId: number): Promise<Game[]> {
-    return this.gamesService.getGamesByListId(listId);
+    return this.gamesService.move(id, moveDto, session.sub);
   }
 
   @Patch('order')
   @UseGuards(AccessTokenGuard)
   @ApiOperation({ summary: 'Update the order of games in a list' })
-  async updateGameOrder(@Body() updateGameOrderDto: UpdateGameOrderDto): Promise<void> {
-    return this.gamesService.updateGameOrder(updateGameOrderDto.updates);
+  async updateOrder(@Body() updateOrderDto: UpdateOrderDto): Promise<void> {
+    return this.gamesService.updateOrder(updateOrderDto.updates);
+  }
+
+  @Delete(':id')
+  @ApiOperation({ summary: 'Delete a game from a list' })
+  async delete(
+    @Param('id', ParseIntPipe) id: number,
+    @CurrentSession() session: JwtAccessPayload,
+  ): Promise<void> {
+    return this.gamesService.delete(id, session.sub);
   }
 }
