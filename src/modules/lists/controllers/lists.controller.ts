@@ -64,8 +64,11 @@ export class ListsController {
     },
   })
   @Get(':id')
-  async findOneById(@Param('id', ParseIntPipe) id: number): Promise<List> {
-    return this.listsService.findOneById(id);
+  async findOneById(
+    @Param('id', ParseIntPipe) id: number,
+    @CurrentSession() session: JwtAccessPayload,
+  ): Promise<List> {
+    return this.listsService.findOneById(id, session.sub);
   }
 
   @ApiOperation({ summary: 'Create a new list' })
@@ -85,15 +88,19 @@ export class ListsController {
   public async update(
     @Param('id', ParseIntPipe) id: number,
     @Body() updateListDto: UpdateListDto,
+    @CurrentSession() session: JwtAccessPayload,
   ): Promise<List> {
-    return this.listsService.update(id, updateListDto);
+    return this.listsService.update(id, updateListDto, session.sub);
   }
 
   @ApiOperation({ summary: 'Delete a list by ID' })
   @ApiParam({ name: 'id', required: true, description: 'ID of the list to delete' })
   @ApiResponse({ status: HttpStatus.NO_CONTENT, description: 'List deleted successfully' })
   @Delete(':id')
-  public async delete(@Param('id', ParseIntPipe) id: number): Promise<void> {
-    return this.listsService.delete(id);
+  public async delete(
+    @Param('id', ParseIntPipe) id: number,
+    @CurrentSession() session: JwtAccessPayload,
+  ): Promise<void> {
+    return this.listsService.delete(id, session.sub);
   }
 }

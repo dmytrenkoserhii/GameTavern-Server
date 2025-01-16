@@ -140,8 +140,30 @@
       "back_to_games": "Назад на головну"
     }
   },
+  "games": {
+    "add_to_list": "Додати до списку",
+    "select_list": "Вибрати список",
+    "select_list_placeholder": "Оберіть список...",
+    "add_to_list_confirm": "Додати до списку",
+    "add_success": "Успіх",
+    "add_success_message": "Гра успішно додана до списку",
+    "add_error": "Помилка",
+    "add_error_message": "Не вдалося додати гру до списку",
+    "count": "Гри",
+    "game_card": {
+      "move_to_list": "Перемістити до списку",
+      "move_confirm": "Перемістити гру",
+      "select_list_placeholder": "Оберіть список...",
+      "move_success": "Успіх",
+      "move_success_message": "Гра успішно переміщена до списку",
+      "delete_from_list": "Видалити зі списку",
+      "delete_success": "Успіх",
+      "delete_success_message": "Гра успішно видалена зі списку"
+    }
+  },
   "general": {
     "sign_in": "Увійти",
-    "save_changes": "Зберегти зміни"
+    "save_changes": "Зберегти зміни",
+    "cancel_changes": "Скасувати зміни"
   }
 }

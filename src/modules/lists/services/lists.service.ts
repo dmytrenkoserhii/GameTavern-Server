@@ -41,8 +41,11 @@ export class ListsService {
     return createPaginatedResponse(items, total, page, limit);
   }
 
-  public async findOneById(id: number): Promise<List> {
-    const list = await this.listRepository.findOne({ where: { id } });
+  public async findOneById(id: number, userId: number): Promise<List> {
+    const list = await this.listRepository.findOne({
+      where: { id, user: { id: userId } },
+      relations: ['games', 'user'],
+    });
 
     if (!list) {
       throw new NotFoundException(`List with ID ${id} not found`);
@@ -56,14 +59,14 @@ export class ListsService {
     return this.listRepository.save(list);
   }
 
-  public async update(id: number, updateListDto: UpdateListDto): Promise<List> {
-    const list = await this.findOneById(id);
+  public async update(id: number, updateListDto: UpdateListDto, userId: number): Promise<List> {
+    const list = await this.findOneById(id, userId);
     Object.assign(list, updateListDto);
     return this.listRepository.save(list);
   }
 
-  public async delete(id: number): Promise<void> {
-    const list = await this.findOneById(id);
+  public async delete(id: number, userId: number): Promise<void> {
+    const list = await this.findOneById(id, userId);
     await this.listRepository.remove(list);
   }
 }
