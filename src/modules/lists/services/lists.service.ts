@@ -2,7 +2,7 @@ import { createPaginatedResponse } from '@shared/utils/create-paginated-response
 
 import { Repository } from 'typeorm';
 
-import { ForbiddenException, Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 
 import { PaginatedResponse } from '@/shared/types/paginated-response.interface';
@@ -41,10 +41,10 @@ export class ListsService {
     return createPaginatedResponse(items, total, page, limit);
   }
 
-  public async findOneById(id: number): Promise<List> {
+  public async findOneById(id: number, userId: number): Promise<List> {
     const list = await this.listRepository.findOne({
-      where: { id },
-      relations: ['games'],
+      where: { id, user: { id: userId } },
+      relations: ['games', 'user'],
     });
 
     if (!list) {
@@ -59,24 +59,14 @@ export class ListsService {
     return this.listRepository.save(list);
   }
 
-  public async update(id: number, updateListDto: UpdateListDto): Promise<List> {
-    const list = await this.findOneById(id);
+  public async update(id: number, updateListDto: UpdateListDto, userId: number): Promise<List> {
+    const list = await this.findOneById(id, userId);
     Object.assign(list, updateListDto);
     return this.listRepository.save(list);
   }
 
-  public async delete(id: number): Promise<void> {
-    const list = await this.findOneById(id);
+  public async delete(id: number, userId: number): Promise<void> {
+    const list = await this.findOneById(id, userId);
     await this.listRepository.remove(list);
-  }
-
-  async validateListOwnership(listId: number, userId: number): Promise<void> {
-    const list = await this.listRepository.findOne({
-      where: { id: listId, user: { id: userId } },
-    });
-
-    if (!list) {
-      throw new ForbiddenException('You do not own this list');
-    }
   }
 }

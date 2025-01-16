@@ -37,8 +37,11 @@ export class GamesController {
 
   @Post()
   @ApiOperation({ summary: 'Add a game to a list' })
-  async create(@Body() createDto: CreateDto): Promise<Game> {
-    return this.gamesService.create(createDto);
+  async create(
+    @Body() createDto: CreateDto,
+    @CurrentSession() session: JwtAccessPayload,
+  ): Promise<Game> {
+    return this.gamesService.create(createDto, session.sub);
   }
 
   @Patch(':id/move')

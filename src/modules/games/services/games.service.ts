@@ -1,6 +1,11 @@
 import { Repository } from 'typeorm';
 
-import { ConflictException, Injectable, NotFoundException } from '@nestjs/common';
+import {
+  ConflictException,
+  ForbiddenException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 
 import { List } from '@/modules/lists/entities/list.entity';
@@ -31,7 +36,13 @@ export class GamesService {
     });
   }
 
-  async create(createDto: CreateDto): Promise<Game> {
+  async create(createDto: CreateDto, userId: number): Promise<Game> {
+    const list = await this.listsService.findOneById(createDto.listId, userId);
+
+    if (!list) {
+      throw new ForbiddenException('You do not have permission to add games to this list');
+    }
+
     const existingGame = await this.gamesRepository.findOne({
       where: {
         gameApiId: createDto.gameApiId,
@@ -73,7 +84,15 @@ export class GamesService {
       throw new NotFoundException('Game not found or access denied');
     }
 
+    const maxOrderGame = await this.gamesRepository
+      .createQueryBuilder('game')
+      .select('MAX(game.orderNumber)', 'maxOrder')
+      .where('game.list = :listId', { listId: moveDto.targetListId })
+      .getRawOne();
+
+    game.orderNumber = maxOrderGame ? maxOrderGame.maxOrder + 1 : 1;
     game.list = { id: moveDto.targetListId } as List;
+
     return this.gamesRepository.save(game);
   }
 
