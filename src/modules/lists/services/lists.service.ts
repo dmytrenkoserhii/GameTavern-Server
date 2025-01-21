@@ -27,6 +27,7 @@ export class ListsService {
     const queryBuilder = this.listRepository
       .createQueryBuilder('list')
       .leftJoinAndSelect('list.user', 'user')
+      .leftJoinAndSelect('list.games', 'games')
       .where('user.id = :userId', { userId })
       .skip((page - 1) * limit)
       .take(limit);
