@@ -61,7 +61,11 @@
       "email_label": "Email",
       "email_placeholder": "Enter your email address",
       "submit_button": "Send Reset Instructions",
-      "description": "Enter your account's email so we can send instructions on how to reset your password."
+      "description": "Enter your account's email so we can send instructions on how to reset your password.",
+      "success_title": "Email Sent",
+      "success_message": "If an account exists with this email, you will receive password reset instructions",
+      "error_title": "Request Failed",
+      "error_message": "Failed to send reset instructions. Please try again."
     },
     "reset_password": {
       "title": "Change your password",
@@ -69,15 +73,25 @@
       "password_placeholder": "Enter your new password",
       "confirm_password_label": "Confirm new password",
       "confirm_password_placeholder": "Confirm your new password",
-      "submit_button": "Change my password"
+      "submit_button": "Change my password",
+      "success_title": "Password Reset",
+      "success_message": "Your password has been successfully reset. You can now sign in with your new password.",
+      "error_title": "Reset Failed",
+      "error_message": "Failed to reset password. The link may be expired or invalid."
     },
     "email_confirmation": {
-      "title": "Account Confirmation",
-      "description": "An email with your account confirmation link has been sent to your email: {{email}}. Check your email and come back to proceed!"
-    },
-    "email_verification": {
-      "title": "Email Verification",
-      "message": "Your email is being verified. Please wait..."
+      "check_email_title": "Check Your Email",
+      "check_email_description": "We've sent a confirmation link to {{email}}. Please check your inbox and click the link to confirm your account.",
+      "resend_button": "Resend Confirmation Email",
+      "resend_success_title": "Email Sent",
+      "resend_success_message": "A new confirmation email has been sent to your inbox",
+      "confirming_title": "Confirming Your Email",
+      "confirming_message": "Please wait while we confirm your email...",
+      "success_title": "Email Confirmed!",
+      "success_message": "Your email has been confirmed successfully. Redirecting to home page...",
+      "error_title": "Confirmation Failed",
+      "error_message": "Could not confirm your email. The link may be expired or invalid.",
+      "your_email": "your email"
     }
   },
   "lists": {
