@@ -37,4 +37,6 @@ export const ENV_VALIDATION = {
   [ENV.LEMONSQUEEZY_API_KEY]: Joi.string().required(),
   [ENV.LEMONSQUEEZY_STORE_ID]: Joi.string().required(),
   [ENV.LEMONSQUEEZY_WEBHOOK_SIGNATURE]: Joi.string().required(),
+
+  [ENV.OPENAI_API_KEY]: Joi.string().required(),
 };
