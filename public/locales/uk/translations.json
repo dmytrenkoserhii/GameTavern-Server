@@ -122,6 +122,11 @@
         "newest": "Нові",
         "oldest": "Старі"
       }
+    },
+    "recommendations": {
+      "get_recommendations": "Отримати Рекомендації",
+      "modal_title": "Рекомендації Ігор",
+      "load_more": "Завантажити Більше Ігор"
     }
   },
   "games_api": {
@@ -178,6 +183,7 @@
   "general": {
     "sign_in": "Увійти",
     "save_changes": "Зберегти зміни",
-    "cancel_changes": "Скасувати зміни"
+    "cancel_changes": "Скасувати зміни",
+    "loading": "Завантаження..."
   }
 }

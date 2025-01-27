@@ -122,6 +122,11 @@
         "newest": "Newest",
         "oldest": "Oldest"
       }
+    },
+    "recommendations": {
+      "get_recommendations": "Get Recommendations",
+      "modal_title": "Game Recommendations",
+      "load_more": "Load More Games"
     }
   },
   "games_api": {
@@ -178,6 +183,7 @@
   "general": {
     "sign_in": "Sign in",
     "save_changes": "Save Changes",
-    "cancel_changes": "Cancel Changes"
+    "cancel_changes": "Cancel Changes",
+    "loading": "Loading..."
   }
 }
