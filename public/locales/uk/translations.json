@@ -169,6 +169,9 @@
     "add_error": "Помилка",
     "add_error_message": "Не вдалося додати гру до списку",
     "count": "Гри",
+    "similar_games_title": "Подібні ігри",
+    "meta_data_platforms": "Випущено на",
+    "meta_data_genres": "Жанри",
     "game_card": {
       "move_to_list": "Перемістити до списку",
       "move_confirm": "Перемістити гру",

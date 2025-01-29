@@ -169,6 +169,9 @@
     "add_error": "Error",
     "add_error_message": "Failed to add game to list",
     "count": "Games",
+    "similar_games_title": "Similar Games",
+    "meta_data_platforms": "Released on",
+    "meta_data_genres": "Genres",
     "game_card": {
       "move_to_list": "Move to List",
       "move_confirm": "Move Game",
