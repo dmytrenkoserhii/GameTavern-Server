@@ -181,6 +181,12 @@
       "delete_from_list": "Delete from List",
       "delete_success": "Success",
       "delete_success_message": "Game removed successfully"
+    },
+    "recommendations": {
+      "get_recommendations_by_description": "Get Game Recommendations",
+      "description_modal_title": "Get Game Recommendations by Description",
+      "description_placeholder": "Describe what kind of game you are looking for (e.g.: game with dragons and magic in medieval setting)",
+      "submit": "Find Games"
     }
   },
   "general": {
