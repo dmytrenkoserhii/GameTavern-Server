@@ -182,6 +182,16 @@
       "delete_success": "Success",
       "delete_success_message": "Game removed successfully"
     },
+    "game_info": {
+      "ask_about_game": "Ask About Game",
+      "modal_title": "Game Information",
+      "completion_time": "Completion Time",
+      "difficulty": "Difficulty",
+      "story_summary": "Story Summary",
+      "pros_cons": "Pros & Cons",
+      "beginner_tips": "Beginner Tips",
+      "system_requirements": "System Requirements"
+    },
     "recommendations": {
       "get_recommendations_by_description": "Get Game Recommendations",
       "description_modal_title": "Get Game Recommendations by Description",

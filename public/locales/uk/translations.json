@@ -182,6 +182,16 @@
       "delete_success": "Успіх",
       "delete_success_message": "Гра успішно видалена зі списку"
     },
+    "game_info": {
+      "ask_about_game": "Запитати про гру",
+      "modal_title": "Інформація про гру",
+      "completion_time": "Час проходження",
+      "difficulty": "Складність",
+      "story_summary": "Сюжет",
+      "pros_cons": "Плюси та мінуси",
+      "beginner_tips": "Поради початківцям",
+      "system_requirements": "Системні вимоги"
+    },
     "recommendations": {
       "get_recommendations_by_description": "Отримати Рекомендації Ігор",
       "description_modal_title": "Отримати Рекомендації Ігор за Описом",

@@ -8,7 +8,9 @@ import { ApiListGame } from '@/modules/games-api/types/api-list-game.interface';
 import { ENV } from '@/shared/enums';
 
 import { GameDescriptionDto } from '../dtos/game-description.dto';
+import { GameQuestionDto } from '../dtos/game-question.dto';
 import { GameRecommendationsDto } from '../dtos/game-recommendations.dto';
+import { GetGameInfoResponse } from '../types/get-game-info-response.interface';
 
 @Injectable()
 export class AiService {
@@ -56,9 +58,11 @@ export class AiService {
     return recommendedGames;
   }
 
-  async getListGamesRecommendations(dto: GameRecommendationsDto): Promise<ApiListGame[]> {
-    const existingRecommendationsMessage = dto.existingRecommendations?.length
-      ? `DO NOT include these already recommended games: ${dto.existingRecommendations.join(', ')}.`
+  async getListGamesRecommendations(
+    gameRecommendationsDto: GameRecommendationsDto,
+  ): Promise<ApiListGame[]> {
+    const existingRecommendationsMessage = gameRecommendationsDto.existingRecommendations?.length
+      ? `DO NOT include these already recommended games: ${gameRecommendationsDto.existingRecommendations.join(', ')}.`
       : '';
 
     const response = await this.openai.chat.completions.create({
@@ -73,7 +77,7 @@ export class AiService {
         },
         {
           role: 'user',
-          content: `Based on these games: ${dto.games.join(', ')}, 
+          content: `Based on these games: ${gameRecommendationsDto.games.join(', ')}, 
           suggest 5 similar games. 
           ${existingRecommendationsMessage}
           Return as JSON array of game names.`,
@@ -86,7 +90,10 @@ export class AiService {
     const recommendedGames = [];
 
     for (const game of gameRecommendations) {
-      if (recommendedGames.length + (dto.existingRecommendations?.length || 0) >= 30) {
+      if (
+        recommendedGames.length + (gameRecommendationsDto.existingRecommendations?.length || 0) >=
+        30
+      ) {
         break;
       }
 
@@ -95,5 +102,26 @@ export class AiService {
     }
 
     return recommendedGames;
+  }
+
+  async getGameInfo(gameQuestionDto: GameQuestionDto): Promise<GetGameInfoResponse> {
+    const response = await this.openai.chat.completions.create({
+      model: 'gpt-3.5-turbo',
+      response_format: { type: 'json_object' },
+      messages: [
+        {
+          role: 'system',
+          content:
+            'You are a video game expert. Provide concise and informative answers about games.',
+        },
+        {
+          role: 'user',
+          content: `Return a JSON response with an "answer" field containing information 
+          about this game ${gameQuestionDto.gameName} : ${gameQuestionDto.question}`,
+        },
+      ],
+    });
+
+    return JSON.parse(response.choices[0].message.content as string);
   }
 }
