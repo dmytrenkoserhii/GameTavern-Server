@@ -27,9 +27,9 @@ export class AiController {
     },
   })
   async getGamesRecommendationsByDescription(
-    @Body() dto: GameDescriptionDto,
+    @Body() gameDescriptionDto: GameDescriptionDto,
   ): Promise<ApiListGame[]> {
-    return this.aiService.getGamesByDescription(dto);
+    return this.aiService.getGamesByDescription(gameDescriptionDto);
   }
 
   @Post('list-games-recommendations')

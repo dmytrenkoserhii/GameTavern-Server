@@ -23,8 +23,8 @@ export class AiService {
     });
   }
 
-  async getGamesByDescription(dto: GameDescriptionDto): Promise<ApiListGame[]> {
-    const { description } = dto;
+  async getGamesByDescription(gameDescriptionDto: GameDescriptionDto): Promise<ApiListGame[]> {
+    const { description } = gameDescriptionDto;
 
     const response = await this.openai.chat.completions.create({
       model: 'gpt-3.5-turbo',
