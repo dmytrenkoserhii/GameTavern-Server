@@ -116,7 +116,8 @@ export class AiService {
         },
         {
           role: 'user',
-          content: `Return a JSON response with an "answer" field containing information about: ${gameQuestionDto.question} ${gameQuestionDto.gameName}?`,
+          content: `Return a JSON response with an "answer" field containing information 
+          about this game ${gameQuestionDto.gameName} : ${gameQuestionDto.question}`,
         },
       ],
     });
