@@ -191,6 +191,12 @@
       "pros_cons": "Pros & Cons",
       "beginner_tips": "Beginner Tips",
       "system_requirements": "System Requirements"
+    },
+    "recommendations": {
+      "get_recommendations_by_description": "Get Game Recommendations",
+      "description_modal_title": "Get Game Recommendations by Description",
+      "description_placeholder": "Describe what kind of game you are looking for (e.g.: game with dragons and magic in medieval setting)",
+      "submit": "Find Games"
     }
   },
   "general": {

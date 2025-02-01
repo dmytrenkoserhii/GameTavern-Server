@@ -191,6 +191,12 @@
       "pros_cons": "Плюси та мінуси",
       "beginner_tips": "Поради початківцям",
       "system_requirements": "Системні вимоги"
+    },
+    "recommendations": {
+      "get_recommendations_by_description": "Отримати Рекомендації Ігор",
+      "description_modal_title": "Отримати Рекомендації Ігор за Описом",
+      "description_placeholder": "Опишіть, яку гру ви шукаєте (напр.: гра з драконами і магією в середньовічному сетінгу)",
+      "submit": "Знайти Ігри"
     }
   },
   "general": {
