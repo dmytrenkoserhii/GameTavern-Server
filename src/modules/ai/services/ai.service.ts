@@ -24,9 +24,11 @@ export class AiService {
     });
   }
 
-  async getListGamesRecommendations(dto: GameRecommendationsDto): Promise<ApiListGame[]> {
-    const existingRecommendationsMessage = dto.existingRecommendations?.length
-      ? `DO NOT include these already recommended games: ${dto.existingRecommendations.join(', ')}.`
+  async getListGamesRecommendations(
+    gameRecommendationsDto: GameRecommendationsDto,
+  ): Promise<ApiListGame[]> {
+    const existingRecommendationsMessage = gameRecommendationsDto.existingRecommendations?.length
+      ? `DO NOT include these already recommended games: ${gameRecommendationsDto.existingRecommendations.join(', ')}.`
       : '';
 
     const response = await this.openai.chat.completions.create({
@@ -41,7 +43,7 @@ export class AiService {
         },
         {
           role: 'user',
-          content: `Based on these games: ${dto.games.join(', ')}, 
+          content: `Based on these games: ${gameRecommendationsDto.games.join(', ')}, 
           suggest 5 similar games. 
           ${existingRecommendationsMessage}
           Return as JSON array of game names.`,
@@ -54,7 +56,10 @@ export class AiService {
     const recommendedGames = [];
 
     for (const game of gameRecommendations) {
-      if (recommendedGames.length + (dto.existingRecommendations?.length || 0) >= 30) {
+      if (
+        recommendedGames.length + (gameRecommendationsDto.existingRecommendations?.length || 0) >=
+        30
+      ) {
         break;
       }
 
@@ -65,7 +70,7 @@ export class AiService {
     return recommendedGames;
   }
 
-  async getGameInfo(gameQuestionData: GameQuestionDto): Promise<GetGameInfoResponse> {
+  async getGameInfo(gameQuestionDto: GameQuestionDto): Promise<GetGameInfoResponse> {
     const response = await this.openai.chat.completions.create({
       model: 'gpt-3.5-turbo',
       response_format: { type: 'json_object' },
@@ -77,7 +82,7 @@ export class AiService {
         },
         {
           role: 'user',
-          content: `Return a JSON response with an "answer" field containing information about: ${gameQuestionData.question} ${gameQuestionData.gameName}?`,
+          content: `Return a JSON response with an "answer" field containing information about: ${gameQuestionDto.question} ${gameQuestionDto.gameName}?`,
         },
       ],
     });

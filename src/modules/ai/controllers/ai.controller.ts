@@ -28,9 +28,9 @@ export class AiController {
     },
   })
   async getListGamesRecommendations(
-    @Body() gameRecommendationsData: GameRecommendationsDto,
+    @Body() gameRecommendationsDto: GameRecommendationsDto,
   ): Promise<ApiListGame[]> {
-    return this.aiService.getListGamesRecommendations(gameRecommendationsData);
+    return this.aiService.getListGamesRecommendations(gameRecommendationsDto);
   }
 
   @Post('game-info')
@@ -46,7 +46,7 @@ export class AiController {
       },
     },
   })
-  async getGameInfo(@Body() gameQuestionData: GameQuestionDto): Promise<GetGameInfoResponse> {
-    return this.aiService.getGameInfo(gameQuestionData);
+  async getGameInfo(@Body() gameQuestionDto: GameQuestionDto): Promise<GetGameInfoResponse> {
+    return this.aiService.getGameInfo(gameQuestionDto);
   }
 }
