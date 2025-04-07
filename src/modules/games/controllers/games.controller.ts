@@ -15,11 +15,9 @@ import { CurrentSession } from '@/modules/auth/decorators/current-session.decora
 import { AccessTokenGuard } from '@/modules/auth/guards/access-token.guard';
 import { JwtAccessPayload } from '@/modules/auth/types/jwt-access-payload.interface';
 
-import { CreateDto } from '../dtos/create-game.dto';
-import { MoveDto } from '../dtos/move.dto';
-import { UpdateOrderDto } from '../dtos/update-order.dto';
-import { Game } from '../entities/game.entity';
-import { GamesService } from '../services/games.service';
+import { CreateDto, MoveDto, UpdateOrderDto } from '../dtos';
+import { Game } from '../entities';
+import { GamesService } from '../services';
 
 @ApiTags('Games')
 @Controller('games')

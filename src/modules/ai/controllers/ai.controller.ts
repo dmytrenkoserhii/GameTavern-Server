@@ -2,14 +2,12 @@ import { Body, Controller, HttpStatus, Post, UseGuards } from '@nestjs/common';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 
 import { AccessTokenGuard } from '@/modules/auth/guards/access-token.guard';
-import { ALL_API_GAMES_RESPONSE_EXAMPLE_DATA } from '@/modules/games-api/constants/all-api-games-response-example-data.constant';
-import { ApiListGame } from '@/modules/games-api/types/api-list-game.interface';
+import { ALL_API_GAMES_RESPONSE_EXAMPLE_DATA } from '@/modules/games-api/constants';
+import { ApiListGame } from '@/modules/games-api/types';
 
-import { GameDescriptionDto } from '../dtos/game-description.dto';
-import { GameQuestionDto } from '../dtos/game-question.dto';
-import { GameRecommendationsDto } from '../dtos/game-recommendations.dto';
+import { GameDescriptionDto, GameQuestionDto, GameRecommendationsDto } from '../dtos';
 import { AiService } from '../services/ai.service';
-import { GetGameInfoResponse } from '../types/get-game-info-response.interface';
+import { GetGameInfoResponse } from '../types';
 
 @ApiTags('AI')
 @Controller('ai')

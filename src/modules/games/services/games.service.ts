@@ -8,12 +8,11 @@ import {
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 
-import { List } from '@/modules/lists/entities/list.entity';
-import { ListsService } from '@/modules/lists/services/lists.service';
+import { List } from '@/modules/lists/entities';
+import { ListsService } from '@/modules/lists/services';
 
-import { CreateDto } from '../dtos/create-game.dto';
-import { MoveDto } from '../dtos/move.dto';
-import { Game } from '../entities/game.entity';
+import { CreateDto, MoveDto } from '../dtos';
+import { Game } from '../entities';
 
 @Injectable()
 export class GamesService {

@@ -1,15 +1,14 @@
-import { createPaginatedResponse } from '@shared/utils/create-paginated-response';
+import { createPaginatedResponse } from '@shared/utils';
 
 import { Repository } from 'typeorm';
 
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 
-import { PaginatedResponse } from '@/shared/types/paginated-response.interface';
+import { PaginatedResponse } from '@/shared/types';
 
-import { CreateListDto } from '../dtos/create-list.dto';
-import { UpdateListDto } from '../dtos/update-list.dto';
-import { List } from '../entities/list.entity';
+import { CreateListDto, UpdateListDto } from '../dtos';
+import { List } from '../entities';
 
 @Injectable()
 export class ListsService {

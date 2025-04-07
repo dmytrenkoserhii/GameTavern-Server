@@ -22,12 +22,13 @@ import { AccessTokenGuard } from '@/modules/auth/guards/access-token.guard';
 import { RolesGuard } from '@/modules/auth/guards/roles.guard';
 import { Role } from '@/modules/users/enums/role.enum';
 
-import { ALL_API_GAMES_RESPONSE_EXAMPLE_DATA } from '../constants/all-api-games-response-example-data.constant';
-import { ALL_API_PLATFORMS_RESPONSE_EXAMPLE_DATA } from '../constants/all-api-platforms-response-example-data.constant';
-import { SINGLE_API_GAME_RESPONSE_EXAMPLE_DATA } from '../constants/single-api-game-response-example-data.constant';
-import { GamesApiService } from '../services/games-api.service';
-import { ApiListGame } from '../types/api-list-game.interface';
-import { ApiSingleGame } from '../types/api-single-game.inteface';
+import {
+  ALL_API_GAMES_RESPONSE_EXAMPLE_DATA,
+  ALL_API_PLATFORMS_RESPONSE_EXAMPLE_DATA,
+  SINGLE_API_GAME_RESPONSE_EXAMPLE_DATA,
+} from '../constants';
+import { GamesApiService } from '../services';
+import { ApiListGame, ApiSingleGame } from '../types';
 
 @ApiBearerAuth()
 @Roles(Role.USER, Role.ADMIN)
