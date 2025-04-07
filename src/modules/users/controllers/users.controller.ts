@@ -14,10 +14,9 @@ import { CurrentSession } from '@/modules/auth/decorators/current-session.decora
 import { AccessTokenGuard } from '@/modules/auth/guards/access-token.guard';
 import { JwtAccessPayload } from '@/modules/auth/types/jwt-access-payload.interface';
 
-import { ConfirmEmailDto } from '../dtos/confirm-email.dto';
-import { User } from '../entities/user.entity';
-import { UsersService } from '../services/users.service';
-import { VerificationService } from './../services/verification.service';
+import { ConfirmEmailDto } from '../dtos';
+import { User } from '../entities';
+import { UsersService, VerificationService } from '../services';
 
 @ApiTags('Users')
 @Controller('users')

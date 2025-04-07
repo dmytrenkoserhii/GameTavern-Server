@@ -3,11 +3,8 @@ import { Repository } from 'typeorm';
 import { Injectable, Logger } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 
-import { CreateAccountWithGoogleAuthDto } from '../dtos/create-account-with-google-auth.dto';
-import { CreateAccountDto } from '../dtos/create-account.dto';
-import { UpdateAccountDto } from '../dtos/update-account.dto';
-import { Account } from '../entities/account.entity';
-import { User } from '../entities/user.entity';
+import { CreateAccountDto, CreateAccountWithGoogleAuthDto, UpdateAccountDto } from '../dtos';
+import { Account, User } from '../entities';
 
 @Injectable()
 export class AccountService {

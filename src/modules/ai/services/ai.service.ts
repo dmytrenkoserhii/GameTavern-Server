@@ -3,14 +3,12 @@ import OpenAI from 'openai';
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 
-import { GamesApiService } from '@/modules/games-api/services/games-api.service';
-import { ApiListGame } from '@/modules/games-api/types/api-list-game.interface';
+import { GamesApiService } from '@/modules/games-api/services';
+import { ApiListGame } from '@/modules/games-api/types';
 import { ENV } from '@/shared/enums';
 
-import { GameDescriptionDto } from '../dtos/game-description.dto';
-import { GameQuestionDto } from '../dtos/game-question.dto';
-import { GameRecommendationsDto } from '../dtos/game-recommendations.dto';
-import { GetGameInfoResponse } from '../types/get-game-info-response.interface';
+import { GameDescriptionDto, GameQuestionDto, GameRecommendationsDto } from '../dtos';
+import { GetGameInfoResponse } from '../types';
 
 @Injectable()
 export class AiService {

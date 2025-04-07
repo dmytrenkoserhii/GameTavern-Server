@@ -18,12 +18,13 @@ import { AccessTokenGuard } from '@/modules/auth/guards/access-token.guard';
 import { JwtAccessPayload } from '@/modules/auth/types/jwt-access-payload.interface';
 import { PaginatedResponse } from '@/shared/types/paginated-response.interface';
 
-import { SINGLE_ALL_LISTS_RESPONSE_EXAMPLE_DATA } from '../constants/single-all-lists-response-example-data.constant';
-import { SINGLE_LIST_RESPONSE_EXAMPLE_DATA } from '../constants/single-list-response-example-data.constant';
-import { CreateListDto } from '../dtos/create-list.dto';
-import { UpdateListDto } from '../dtos/update-list.dto';
-import { List } from '../entities/list.entity';
-import { ListsService } from '../services/lists.service';
+import {
+  SINGLE_ALL_LISTS_RESPONSE_EXAMPLE_DATA,
+  SINGLE_LIST_RESPONSE_EXAMPLE_DATA,
+} from '../constants';
+import { CreateListDto, UpdateListDto } from '../dtos';
+import { List } from '../entities';
+import { ListsService } from '../services';
 
 @ApiBearerAuth()
 @UseGuards(AccessTokenGuard)

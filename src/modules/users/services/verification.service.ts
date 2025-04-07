@@ -2,10 +2,11 @@ import { BadRequestException, Injectable, Logger, NotFoundException } from '@nes
 import { ConfigService } from '@nestjs/config';
 import { JwtService } from '@nestjs/jwt';
 
-import { ENV } from '../../../shared/enums/env.enum';
-import { ConfirmEmailDto } from '../dtos/confirm-email.dto';
-import { EmailService } from './../../../shared/services/email.service';
-import { VerificationTokenPayload } from './../types/verification-token-payload.interface';
+import { ENV } from '@/shared/enums/env.enum';
+import { EmailService } from '@/shared/services/email.service';
+
+import { ConfirmEmailDto } from '../dtos';
+import { VerificationTokenPayload } from '../types';
 import { UsersService } from './users.service';
 
 @Injectable()

@@ -4,6 +4,9 @@ export class UserAuth1731486038722 implements MigrationInterface {
   name = 'UserAuth1731486038722';
 
   public async up(queryRunner: QueryRunner): Promise<void> {
+    // First create the enum type
+    await queryRunner.query(`CREATE TYPE "public"."users_role_enum" AS ENUM('admin', 'user')`);
+
     await queryRunner.query(
       `CREATE TABLE "accounts" ("id" SERIAL NOT NULL, "username" character varying NOT NULL, "firstName" character varying, "lastName" character varying, "biography" character varying, "birthDate" character varying, "phone" character varying, "avatar" character varying, "createdAt" TIMESTAMP NOT NULL DEFAULT now(), "updatedAt" TIMESTAMP NOT NULL DEFAULT now(), CONSTRAINT "UQ_477e3187cedfb5a3ac121e899c9" UNIQUE ("username"), CONSTRAINT "PK_5a7a02c20412299d198e097a8fe" PRIMARY KEY ("id"))`,
     );
@@ -19,5 +22,6 @@ export class UserAuth1731486038722 implements MigrationInterface {
     await queryRunner.query(`ALTER TABLE "users" DROP CONSTRAINT "FK_42bba679e348de51a699fb0a803"`);
     await queryRunner.query(`DROP TABLE "users"`);
     await queryRunner.query(`DROP TABLE "accounts"`);
+    await queryRunner.query(`DROP TYPE "public"."users_role_enum"`);
   }
 }

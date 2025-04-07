@@ -1,4 +1,4 @@
-import { PaginatedResponse } from '@/shared/types/paginated-response.interface';
+import { PaginatedResponse } from '@/shared/types';
 
 export function createPaginatedResponse<T>(
   items: T[],

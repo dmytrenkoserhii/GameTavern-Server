@@ -14,16 +14,15 @@ import { ConfigService } from '@nestjs/config';
 import { InjectRepository } from '@nestjs/typeorm';
 
 import { ForgotPasswordDto } from '@/modules/auth/dtos/forgot-passowrd.dto';
+import { ResetPasswordDto } from '@/modules/auth/dtos/reset-password.dto';
 import { SignUpDto } from '@/modules/auth/dtos/sign-up.dto';
 import { ENV } from '@/shared/enums/env.enum';
+import { TimePeriods } from '@/shared/enums/time-periods.enum';
 import { EmailService } from '@/shared/services/email.service';
+import { generateRandomToken } from '@/utils/generate-random-token';
 
-import { ResetPasswordDto } from '../../auth/dtos/reset-password.dto';
-import { CreateUserWithoutPasswordDto } from '../dtos/create-user-without-password.dto';
-import { UpdateUserDto } from '../dtos/update-user.dto';
-import { User } from '../entities/user.entity';
-import { TimePeriods } from './../../../shared/enums/time-periods.enum';
-import { generateRandomToken } from './../../../utils/generate-random-token';
+import { CreateUserWithoutPasswordDto, UpdateUserDto } from '../dtos';
+import { User } from '../entities';
 import { AccountService } from './account.service';
 
 @Injectable()
