@@ -5,7 +5,7 @@ GameTavern's backend server provides a robust API infrastructure for the GameTav
 
 ## 🛠️ Tech Stack
 - **Core**: 
-  - NestJS 10
+  - NestJS
   - TypeScript
   - Express
 - **Database & ORM**: 
