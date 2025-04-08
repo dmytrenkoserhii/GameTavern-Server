@@ -41,7 +41,7 @@ GameTavern's backend server provides a robust API infrastructure for the GameTav
 ### Installation
 1. Clone the repository:
 ```bash
-git clone https://github.com/[your-username]/GameTavern-Server.git
+git clone https://github.com/dmytrenkoserhii/GameTavern-Server.git
 cd GameTavern-Server
 ```
 
